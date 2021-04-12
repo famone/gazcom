@@ -23,7 +23,7 @@
 			return{
 				navigation: [
 					{
-						link: '/gazosnabzhenie',
+						link: '/catalog/gazosnabzhenie',
 						txt: 'Газоснабжение',
 						subLinks: [
 							{
@@ -41,11 +41,11 @@
 						] 
 					},
 					{
-						link: '/vodosnabzhenie',
+						link: '/catalog/vodosnabzhenie',
 						txt: 'Водоснабжение'
 					},
 					{
-						link: '/otoplenie',
+						link: '/catalog/otoplenie',
 						txt: 'Отопление'
 					}
 				]
