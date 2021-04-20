@@ -27,15 +27,15 @@
 						txt: 'Газоснабжение',
 						subLinks: [
 							{
-								link: '/fff',
+								link: '/catalog/gazosnabzhenie/1',
 								txt: 'Подраздел 1',
 							},
 							{
-								link: '/fff',
+								link: '/catalog/gazosnabzhenie/2',
 								txt: 'Подраздел 2',
 							},
 							{
-								link: '/fff',
+								link: '/catalog/gazosnabzhenie/3',
 								txt: 'Подраздел 3',
 							}
 						] 
