@@ -24,7 +24,7 @@
 						</router-link>
 					</ul>
 					<div class="search">
-						<input type="search" placeholder="Поиск по сайту">
+						<input type="search" placeholder="Поиск по каталогу">
 						<button>
 							<img src="../../assets/img/search.svg" alt="">
 						</button>
