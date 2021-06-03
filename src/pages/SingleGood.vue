@@ -71,6 +71,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import breadcrumbs from '../components/ui/breadcrumbs.vue'
 import SideNavigation from '../components/ui/SideNavigation.vue'
 
@@ -103,6 +104,9 @@ import SideNavigation from '../components/ui/SideNavigation.vue'
 				})
 				this.tabs[id].active = true
 			}
+		},
+		created(){
+			
 		}
 	}
 </script>

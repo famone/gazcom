@@ -1,24 +1,32 @@
 <template>
 	<div class="nav">
 		<div class="container">
-			<ul class="level1">
-				<router-link tag="li" :to="nav.link" v-for="nav in navigation" 
-					:class="{subLinked : nav.subLinks}">
-					{{nav.txt}}
-						<ul class="level2" v-if="nav.subLinks">
-							<router-link tag="li" :to="sub.link" v-for="sub in nav.subLinks">
-								{{sub.txt}}
+			<ul class="level1" v-if="categories">
+				<router-link tag="li" :to=" '/catalog/' + cat.slug" v-for="cat in categories" 
+					:class="{subLinked : cat.child}">
+					{{cat.name}}
+						<ul class="level2" v-if="cat.child">
+							<router-link tag="li" :to="'/catalog/' + cat.slug + '/' + sub.slug" v-for="sub in cat.child">
+								{{sub.name}} ({{sub.count}})
 							</router-link>
 						</ul>
 				</router-link>
 			</ul>
+			<!-- <pre>{{categories}}</pre> -->
 		</div>
 	</div>
 </template>
 
 
 <script>
+import {mapGetters} from 'vuex'
+
 	export default{
+		computed: {
+			...mapGetters({
+				categories: "catalog/getCategory"
+			})
+		},
 		data(){
 			return{
 				navigation: [

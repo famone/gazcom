@@ -9,15 +9,15 @@ const routes = [
 			component: Home
 		},
 		{
-			path: '/catalog/:cat',
+			path: '/catalog/:cat/:sub',
 			component: Catalog,
 			props: true
 		},
-		{
-			path: '/catalog/:cat/:id',
-			component: SingleGood,
-			props: true
-		},
+		// {
+		// 	path: '/catalog/:cat/:id',
+		// 	component: SingleGood,
+		// 	props: true
+		// },
 	]
 
 export default routes;

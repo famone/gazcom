@@ -3,11 +3,11 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-import projects from '../store/projects'
+import catalog from '../store/catalog'
 
 export default new Vuex.Store({
 	modules: {
-		projects,
+		catalog,
 
 	}
 }) 

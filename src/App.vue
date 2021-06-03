@@ -31,7 +31,9 @@ import Navigation from './components/ui/Navigation.vue'
 
   export default{
   	components: {Header, Footer, Navigation},
-
+    created(){
+      this.$store.dispatch('catalog/loadCategory')
+    }
   }
 </script>
 

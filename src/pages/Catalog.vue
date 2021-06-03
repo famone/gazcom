@@ -7,10 +7,12 @@
 			<div class="container">
 				<div class="row">
 					<SideNavigation />
-
-					<div class="col-lg-8">
+					{{loadSingCat}}
+					<!-- <pre>{{singleCategory}}</pre> -->
+					<Skeletons v-if="!singleCategory.length" />
+					<div class="col-lg-8" v-else>
 						<div class="row">
-							<GoodItem  v-for="goodItem in goods" :goodItem="goodItem" />
+							<GoodItem  v-if="goods" v-for="goodItem in singleCategory" :goodItem="goodItem" />
 						</div>
 					</div>
 
@@ -26,76 +28,26 @@
 import breadcrumbs from '../components/ui/breadcrumbs.vue'
 import SideNavigation from '../components/ui/SideNavigation.vue'
 import GoodItem from '../components/ui/GoodItem.vue'
+import Skeletons from '../components/ui/Skeletons.vue'
+import axios from 'axios'
+import { mapGetters } from 'vuex'
 
 	export default{
-		components: {breadcrumbs, SideNavigation, GoodItem},
+		components: {breadcrumbs, SideNavigation, GoodItem, Skeletons},
+		props: ["sub", "cat"],
+		computed: {
+			...mapGetters({
+				singleCategory: "catalog/getSingleCat"
+			}),
+			loadSingCat(){
+				this.$store.dispatch('catalog/loadSingleCat', this.sub)
+			}
+		},
+		
 		data(){
 			return{
-				goods: [
-					{
-						name: 'Фитинг типа A - Гнутый',
-						descr: 'Производитель: DELUXEE',
-						img: require('../assets/img/good1.jpg'),
-						cat: 'gazosnabzhenie',
-						id: 1
-					},
-					{
-						name: 'Фитинг типа Б - Гнутый',
-						descr: 'Производитель: DELUXEE',
-						img: require('../assets/img/good1.jpg'),
-						cat: 'gazosnabzhenie',
-						id: 2
-					},
-					{
-						name: 'Фитинг типа Б - Гнутый',
-						descr: 'Производитель: DELUXEE',
-						img: require('../assets/img/good1.jpg'),
-						cat: 'gazosnabzhenie',
-						id: 3
-					},
-					{
-						name: 'Фитинг типа A - Гнутый',
-						descr: 'Производитель: DELUXEE',
-						img: require('../assets/img/good1.jpg'),
-						cat: 'gazosnabzhenie',
-						id: 4
-					},
-					{
-						name: 'Фитинг типа Б - Гнутый',
-						descr: 'Производитель: DELUXEE',
-						img: require('../assets/img/good1.jpg'),
-						cat: 'gazosnabzhenie',
-						id: 5
-					},
-					{
-						name: 'Фитинг типа Б - Гнутый',
-						descr: 'Производитель: DELUXEE',
-						img: require('../assets/img/good1.jpg'),
-						cat: 'gazosnabzhenie',
-						id: 6
-					},
-					{
-						name: 'Фитинг типа A - Гнутый',
-						descr: 'Производитель: DELUXEE',
-						img: require('../assets/img/good1.jpg'),
-						cat: 'gazosnabzhenie',
-						id: 7
-					},
-					{
-						name: 'Фитинг типа Б - Гнутый',
-						descr: 'Производитель: DELUXEE',
-						img: require('../assets/img/good1.jpg'),
-						cat: 'gazosnabzhenie',
-						id: 8
-					},
-					{
-						name: 'Фитинг типа Б - Гнутый',
-						descr: 'Производитель: DELUXEE',
-						img: require('../assets/img/good1.jpg'),
-						cat: 'gazosnabzhenie',
-						id: 9
-					},
-				]
+				goods: [],
+				loader: true
 			}
 		}
 	}
