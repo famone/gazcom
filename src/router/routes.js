@@ -13,11 +13,11 @@ const routes = [
 			component: Catalog,
 			props: true
 		},
-		// {
-		// 	path: '/catalog/:cat/:id',
-		// 	component: SingleGood,
-		// 	props: true
-		// },
+		{
+			path: '/catalog/:cat/:sub/:id',
+			component: SingleGood,
+			props: true
+		},
 	]
 
 export default routes;

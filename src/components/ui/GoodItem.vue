@@ -9,7 +9,7 @@
 			<div class="good-body">
 				<p class="good-title">{{goodItem.title}}</p>
 				<p class="good-descr">{{goodItem.description.slice(0,75)}}...</p>
-				<router-link tag="button" :to="'/catalog/'" class="blue-btn">Подробнее</router-link>
+				<router-link tag="button" :to=" `/catalog/${this.$route.params.cat}/${this.$route.params.sub}/${goodItem.name}` " class="blue-btn">Подробнее</router-link>
 			</div>
 		</router-link>
 
@@ -24,6 +24,14 @@
 			goodItem:{
 				type: Object,
 				required: true
+			},
+			sub: {
+				required: true,
+				type: String
+			},
+			cat: {
+				required: true,
+				type: String
 			}
 		}
 	}

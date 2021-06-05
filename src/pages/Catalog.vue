@@ -12,7 +12,11 @@
 					<Skeletons v-if="!singleCategory.length" />
 					<div class="col-lg-8" v-else>
 						<div class="row">
-							<GoodItem  v-if="goods" v-for="goodItem in singleCategory" :goodItem="goodItem" />
+							<GoodItem  v-if="goods" v-for="goodItem in singleCategory" 
+							:goodItem="goodItem"
+							:sub="sub"
+							:cat="cat"
+							 />
 						</div>
 					</div>
 

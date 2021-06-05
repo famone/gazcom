@@ -606,7 +606,7 @@ footer ul{
 /*catalog_section*/
 #catalog_section .container .row{
 	position: relative;
-	padding-bottom: 60px;
+	padding-bottom: 15px;
 }
 .sticky-nav{
 	position: sticky;
@@ -773,6 +773,10 @@ footer ul{
 	color: #fff;
 	background-color: #235EA0;
 }
+.mb-0{
+	margin-bottom: 0!important;
+	min-height: inherit;
+}
 
 /* skeleton */
 .skeleton .good-img{
@@ -845,12 +849,37 @@ footer ul{
   }
 
 
-
-
-
-
-
-
+table{
+	table-layout: fixed;
+}
+th{
+	font-size: 14px;
+	font-weight: 400;
+	padding: 8px 0;
+	padding: 10px 10px;
+	text-transform: uppercase;
+}
+td{
+	font-size: 16px;
+	font-weight: 600;
+	padding: 5px 10px;
+}
+tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+.check-btn{
+	background-color:#E5E9F0;
+	color:#000;
+	border:none;
+	padding: 8px 15px;
+	width: fit-content;
+	transition: all .3s ease;
+	cursor: pointer;
+}
+.check-btn:hover{
+	color:#fff;
+	background-color:#0948A2;
+}
 
 
 
