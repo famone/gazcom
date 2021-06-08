@@ -2,7 +2,7 @@
 	<div class="nav">
 		<div class="container">
 			<ul class="level1" v-if="categories">
-				<router-link tag="li" :to=" '/catalog/' + cat.slug" v-for="cat in categories" 
+				<li v-for="cat in categories" 
 					:class="{subLinked : cat.child}">
 					{{cat.name}}
 						<ul class="level2" v-if="cat.child">
@@ -10,7 +10,7 @@
 								{{sub.name}} ({{sub.count}})
 							</router-link>
 						</ul>
-				</router-link>
+				</li>
 			</ul>
 			<!-- <pre>{{categories}}</pre> -->
 		</div>

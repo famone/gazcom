@@ -1,14 +1,15 @@
 <template>
 	<div>
 		
-		<breadcrumbs />
+		<breadcrumbs  />
+
+		<pre style="display:none;">{{loadSingCat}}</pre>
 
 		<section id="catalog_section">
 			<div class="container">
 				<div class="row">
 					<SideNavigation />
-					{{loadSingCat}}
-					<!-- <pre>{{singleCategory}}</pre> -->
+					
 					<Skeletons v-if="!singleCategory.length" />
 					<div class="col-lg-8" v-else>
 						<div class="row">
@@ -41,13 +42,13 @@ import { mapGetters } from 'vuex'
 		props: ["sub", "cat"],
 		computed: {
 			...mapGetters({
-				singleCategory: "catalog/getSingleCat"
+				singleCategory: "catalog/getSingleCat",
+				categories: "catalog/getCategory"
 			}),
 			loadSingCat(){
 				this.$store.dispatch('catalog/loadSingleCat', this.sub)
 			}
 		},
-		
 		data(){
 			return{
 				goods: [],

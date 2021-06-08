@@ -10,14 +10,12 @@
 					{{loadSingGood}}
 					<div class="col-lg-8">
 						<div class="row">
-
-							<!-- <pre>{{goodItem}}</pre> -->
-
 							<div class="col-lg-12">
 								<div class="good-page-box">
 									<div class="row">
 										<div class="col-lg-6">
-											<img :src="goodItem.image" alt="">
+											<img v-if="!goodItem.image" src="https://kknd26.ru/images/no_photo.png" alt="">
+											<img v-else :src="goodItem.image" alt="">
 										</div>
 										<div class="col-lg-6">
 											<h3>{{goodItem.title}}</h3>
@@ -31,7 +29,10 @@
 												<span v-else>{{goodItem.price}} ₽</span>
 												</div>
 											<button class="main-btn">Связаться с консультантом</button>
-											<button class="blue-btn">Добавить в корзину</button>
+											<button class="blue-btn" @click="addToCart()" :disabled="!goodForCart">Добавить в корзину</button>
+											<p class="small-black text-center" style="margin-top:10px;">
+												Чтобы добавить товар в корзину, необходимо выбрать параметры товара ниже
+											</p>
 										</div>
 									</div>
 								</div>
@@ -45,37 +46,28 @@
 								</div>
 
 									<p class="black-txt" v-if="tabs[1].active">
-										Lorem ipsum dolor sit amet consectetur adipisicing, elit. Repellendus, laudantium saepe quidem, cumque quaerat dolorem animi. Voluptates dolorum repellendus quam, maiores praesentium ad dolorem nesciunt, quaerat delectus sed magnam eveniet ducimus placeat obcaecati consectetur ex rerum autem totam ullam beatae natus fugiat? 
-										<br>
-										Repudiandae voluptatibus quam veritatis minima tempore voluptatem, dolore quae voluptate quasi consequuntur nobis velit mollitia in? Quis praesentium excepturi molestiae dolore, aut voluptatum sed perspiciatis id atque provident.
-										<br>
-										Lorem ipsum dolor sit amet consectetur adipisicing, elit. Repellendus, laudantium saepe quidem, cumque.
+										{{goodItem.description}}
 									</p>
 
 									 <table style="width: 100%;" v-else>
 										<tr>
-									 		<th>Тип</th>
-									 		<th>Размер</th>
-											<th>Цена</th>
-									 		<th>Выбрать</th>
+									 		<th v-for="atr in goodItem.attributes">{{atr}}</th>
+											<th>Выбрать</th>
 									 	</tr>
 									 	<tr v-for="variant in goodItem.variations">
-									 		<td>{{variant.attributes.type}}</td>
-									 		<td>{{variant.attributes.length}}</td>
+									 		<td v-for="atr in variant.attributes">{{atr}}</td>
 											<td>
 												<span v-if="variant.regular_price === '999999999.00' ">По запросу</span>
 												<span v-else>{{variant.regular_price}} ₽</span>
 											</td>
-											<td><button class="check-btn">Выбрать</button></td>
+											<td>
+												<div class="checked-btn" v-if="variant === goodForCart">
+													<img src="../assets/img/tick.svg" alt="">
+												</div>
+												<button class="check-btn" @click="addVariant(variant)" v-else>Выбрать</button>
+												
+											</td>
 									 	</tr>
-									 	<!-- <tr>
-									 		<td>Фитинг 50 мм</td>
-									 		<td>1230 ₽</td>
-									 	</tr>
-									 	<tr>
-									 		<td>Фитинг 50 мм</td>
-									 		<td>1000 ₽</td>
-									 	</tr> -->
 									 </table>
 								
 							</div>	
@@ -109,6 +101,7 @@ import SideNavigation from '../components/ui/SideNavigation.vue'
 		},
 		data(){
 			return{
+				goodForCart: null,
 				tabs: [
 					{
 						name: 'Цены и вариации',
@@ -122,6 +115,18 @@ import SideNavigation from '../components/ui/SideNavigation.vue'
 			}
 		},
 		methods: {
+			addVariant(variant){
+				this.goodForCart = variant
+			},
+			addToCart(){
+				let promise = {
+					good: this.goodItem ,
+					variation: this.goodForCart
+				}
+
+				this.$store.dispatch("catalog/addToCart", promise)
+
+			},
 			changeTab(id){
 				this.tabs.forEach(item =>{
 					item.active = false
@@ -131,3 +136,11 @@ import SideNavigation from '../components/ui/SideNavigation.vue'
 		}
 	}
 </script>
+
+
+<style scoped>
+.blue-btn:disabled, .blue-btn[disabled]{
+	opacity: .5;
+	cursor:not-allowed;
+}
+</style>

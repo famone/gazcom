@@ -13,7 +13,7 @@
 						<a href="#" class="simple-link"><img src="../../assets/img/time.svg" alt="">Пн-пт с 9:00 до 18:00</a>
 						<router-link tag="button" to="/cart" class="cart-btn">
 							<img src="../../assets/img/cart.svg" alt="">
-							Корзина: <span>0</span>
+							Корзина: <span>{{cart.length}}</span>
 						</router-link>
 					</div>
 				</div>
@@ -37,14 +37,17 @@
 
 
 <script>
+import {mapGetters} from 'vuex'
+
 	export default{
+		computed: {
+			...mapGetters({
+				cart: "catalog/getCart"
+			})
+		},
 		data(){
 			return{
 				navs: [
-					{
-						link: '/services',
-						txt: 'Каталог'
-					},
 					{
 						link: '/projects',
 						txt: 'О нас'
