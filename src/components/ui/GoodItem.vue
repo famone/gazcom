@@ -1,7 +1,7 @@
 <template>
 	<div class="col-lg-6">
 		<!-- <pre>{{goodItem}}</pre> -->
-		<router-link tag="div" :to="'/catalog/'" class="good-item-box">
+		<router-link tag="div" :to=" `/catalog/${this.$route.params.cat}/${this.$route.params.sub}/${goodItem.name}` " class="good-item-box">
 		
 			<div class="good-img" :style="{'background-image': 'url(' + 'https://kknd26.ru/images/no_photo.png' + ')'}" v-if="!goodItem.image"></div>
 			<div class="good-img" :style="{'background-image': 'url(' + goodItem.image + ')'}" v-else></div>
