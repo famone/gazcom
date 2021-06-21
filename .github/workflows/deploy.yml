@@ -21,13 +21,13 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: 31.31.196.197
+        server: 31.31.198.237
         port: 21
         protocol: ftp
-        username: u0470484
+        username: u0942169
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/
-        server-dir: /gaz.webink.site/dist/
+        server-dir: /public_html/aquagaz.ru/dist/
 
     # - name: send message to tg
     #   uses: appleboy/telegram-action@master
