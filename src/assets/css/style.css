@@ -975,9 +975,28 @@ tr:nth-child(even) {
 }
 
 
+#zakaz{
+	padding: 60px 0;
+}
+.grey-box{
+	background-color: #E5E9F0;
+	padding: 25px 45px;
+}
 
-
-
+.grey-box input{
+	width: 100%;
+	margin-bottom: 25px;
+	padding: 8px 15px;
+	font-size: 16px;
+	border: none;
+	color:#000;
+}
+.grey-box label span{
+	color: red;
+}
+.errorInp{
+	border: 1px red solid!important;
+}
 
 
 
