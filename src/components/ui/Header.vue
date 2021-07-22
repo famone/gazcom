@@ -9,7 +9,7 @@
 						для инженерных систем</p>
 					</router-link>
 					<div class="side-inf">
-						<a href="#" class="simple-link"><img src="../../assets/img/tel.svg" alt="">8 (812) 444-44-44</a>
+						<a href="tel:+79313436553" class="simple-link"><img src="../../assets/img/tel.svg" alt="">+7 931 343-65-53</a>
 						<a href="#" class="simple-link"><img src="../../assets/img/time.svg" alt="">Пн-пт с 9:00 до 18:00</a>
 						<router-link tag="button" to="/cart" class="cart-btn">
 							<img src="../../assets/img/cart.svg" alt="">
@@ -23,12 +23,12 @@
 							{{nav.txt}}
 						</router-link>
 					</ul>
-					<div class="search">
+					<!-- <div class="search">
 						<input type="search" placeholder="Поиск по каталогу">
 						<button>
 							<img src="../../assets/img/search.svg" alt="">
 						</button>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -49,17 +49,17 @@ import {mapGetters} from 'vuex'
 			return{
 				navs: [
 					{
-						link: '/projects',
+						link: '/about',
 						txt: 'О нас'
 					},
 					{
-						link: '/team',
+						link: '/docs',
 						txt: 'Документы'
 					},
-					{
-						link: '/team',
-						txt: 'Новости'
-					},
+					// {
+					// 	link: '/team',
+					// 	txt: 'Новости'
+					// },
 					{
 						link: '/contacts',
 						txt: 'Контакты'

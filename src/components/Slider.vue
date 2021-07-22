@@ -13,9 +13,9 @@
 					<swiper-slide v-for="item in slides">
 		    			<div class="slide" :style="{'background-image': 'url(' + item.img + ')'}">
 		    				<div class="container">
-		    					<h1 data-swiper-parallax="-500">{{item.title}}</h1>
+		    					<h1 data-swiper-parallax="-500" v-html="item.title"></h1>
 		    					<p class="big-white" v-html="item.txt" data-swiper-parallax="-250"></p>
-		    					 <button class="main-btn" data-swiper-parallax="-100">Посмотреть в каталоге</button>
+		    					 <router-link tag="button" to="/catalog/gazosnobzhenie/frialen" class="main-btn" data-swiper-parallax="-100">Посмотреть в каталоге</router-link>
 		    				</div>
 		    			</div>
 		    		</swiper-slide>
@@ -35,13 +35,13 @@
 			return{
 				slides: [
 					{
-						title: 'Оборудование DUNGS',
+						title: 'Оборудование для <br> инженерных систем',
 						txt: 'для обслуживания газораспределительных систем, <br> котельного оборудования и автоматики',
 						link: '/fff',
 						img: require('../assets/img/slide1.jpg')
 					},
 					{
-						title: 'Оборудование DUNGS',
+						title: 'Оборудование для <br> инженерных систем',
 						txt: 'для обслуживания газораспределительных систем, <br> котельного оборудования и автоматики',
 						link: '/fff',
 						img: require('../assets/img/slide1.jpg')

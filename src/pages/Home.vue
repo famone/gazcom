@@ -4,7 +4,7 @@
 		<Catalog />
 		<About />
 		<Docs />
-		<News />
+		<!-- <News /> -->
 		<Contactus />
 		<Factories />
 	</div>

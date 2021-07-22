@@ -998,9 +998,22 @@ tr:nth-child(even) {
 	border: 1px red solid!important;
 }
 
+.ymap-container{
+	height: 450px;
+}
 
 
-
+.cont-icon{
+	margin-bottom: 45px;
+}
+.cont-icon img{
+	height: 60px;
+}
+.cont-link{
+	font-size: 16px;
+	font-weight: 600;
+	color: #235EA0 ;
+}
 
 
 

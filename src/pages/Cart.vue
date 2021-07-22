@@ -9,8 +9,16 @@
             </div>
         </section>
 
-
-        <section id="catalog_section" v-if="cart.length">
+        <section id="catalog_section" v-if="!cart.length" style="padding: 100px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 style="margin-bottom:20px ;">Ваша корзина пуста</h2>
+                    </div>
+                </div>
+            </div>
+        </section>  
+        <section id="catalog_section" v-else>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

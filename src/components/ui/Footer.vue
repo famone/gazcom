@@ -2,14 +2,16 @@
 	<div>
 		<footer>
 			<div class="container">
-				<div class="col-lg-3">
+				<div class="col-lg-6">
 					<h5>Контакты</h5>
 					<p class="small-white">
 						ООО Аквагазком - продажа 
 						<br>оборудования для инженерных  <br>
 						систем
 					</p>
-					<a href="tel:+78124444444" class="strong-link">8 (812) 444-44-44</a>
+					<a href="tel:+79313436553" class="strong-link">+7 931 343-65-53</a>
+					<br>
+					<a href="mailto:citygazline@mail.ru" class="strong-link">citygazline@mail.ru</a>
 					<p class="strong-link">Гатчина, ул. 7-й армии, 8 Б</p>
 				</div>
 				<div class="col-lg-3" v-for="cat in categories">
@@ -42,75 +44,29 @@
 						txt: 'Газоснабжение',
 						links: [
 							{
-								txt: 'ГРПШ',
-								link: 'grpsh'
+								txt: 'Frialen',
+								link: '/catalog/gazosnobzhenie/frialen'
 							},
 							{
-								txt: 'Цокольные вводы и спецотводы',
-								link: 'grpsh'
-							},
-							{
-								txt: 'Счетчики газа промышленные',
-								link: 'grpsh'
-							},
-							{
-								txt: 'Счетчики газа бытовые',
-								link: 'grpsh'
-							},
-							{
-								txt: 'Электросварные фитинги для ПНД труб',
-								link: 'grpsh'
-							},
-						]
-					},
-					{	
-						mainLink: '/vodoosnabjenie/',
-						txt: 'Водоснабжение',
-						links: [
-							{
-								txt: 'ГРПШ',
-								link: 'grpsh'
-							},
-							{
-								txt: 'Цокольные вводы и спецотводы',
-								link: 'grpsh'
-							},
-							{
-								txt: 'Счетчики газа промышленные',
-								link: 'grpsh'
-							},
-							{
-								txt: 'Счетчики газа бытовые',
-								link: 'grpsh'
-							},
-							{
-								txt: 'Электросварные фитинги для ПНД труб',
-								link: 'grpsh'
+								txt: 'Фитинги GF',
+								link: '/catalog/gazosnobzhenie/fitingi-gf-gazosnobzhenie'
 							},
 						]
 					},
 					{	
 						mainLink: '/gazosnabjenie/',
-						txt: 'Отопление',
+						txt: 'Меню',
 						links: [
 							{
-								txt: 'ГРПШ',
+								txt: 'О нас',
 								link: 'grpsh'
 							},
 							{
-								txt: 'Цокольные вводы и спецотводы',
+								txt: 'Документы',
 								link: 'grpsh'
 							},
 							{
-								txt: 'Счетчики газа промышленные',
-								link: 'grpsh'
-							},
-							{
-								txt: 'Счетчики газа бытовые',
-								link: 'grpsh'
-							},
-							{
-								txt: 'Электросварные фитинги для ПНД труб',
+								txt: 'Контакты',
 								link: 'grpsh'
 							},
 						]

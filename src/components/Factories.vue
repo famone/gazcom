@@ -22,36 +22,48 @@
 			return{
 				brands:[
 					{
-						txt: 'Cигнал',
-						img: require('../assets/img/f1.jpg')
+						txt: 'VAG',
+						img: require('../assets/img/par1.jpg')
+					},
+					{
+						txt: 'AVR',
+						img: require('../assets/img/par2.jpg')
+					},
+					{
+						txt: 'CTC',
+						img: require('../assets/img/par3.jpg')
 					},
 					{
 						txt: 'Friatec',
-						img: require('../assets/img/f2.jpg')
+						img: require('../assets/img/par4.jpg')
 					},
 					{
-						txt: 'Temper',
-						img: require('../assets/img/f3.jpg')
+						txt: 'Nordpipe',
+						img: require('../assets/img/par5.jpg')
 					},
 					{
-						txt: 'Elster',
-						img: require('../assets/img/f4.jpg')
+						txt: 'Polymer',
+						img: require('../assets/img/par6.jpg')
 					},
 					{
-						txt: 'Cигнал',
-						img: require('../assets/img/f1.jpg')
+						txt: 'HAWLE',
+						img: require('../assets/img/par7.jpg')
 					},
 					{
-						txt: 'Friatec',
-						img: require('../assets/img/f2.jpg')
+						txt: 'Viking Johnson',
+						img: require('../assets/img/par8.jpg')
 					},
 					{
-						txt: 'Temper',
-						img: require('../assets/img/f3.jpg')
+						txt: 'UralPlast',
+						img: require('../assets/img/par9.jpg')
 					},
 					{
-						txt: 'Elster',
-						img: require('../assets/img/f4.jpg')
+						txt: 'Agru',
+						img: require('../assets/img/par10.jpg')
+					},
+					{
+						txt: '+GF+',
+						img: require('../assets/img/par11.jpg')
 					},
 				]
 			}
