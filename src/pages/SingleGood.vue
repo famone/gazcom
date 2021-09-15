@@ -25,7 +25,7 @@
 												<span v-else>Нет в наличии</span>
 											</p>
 											<div class="price-box">Цена: 
-												<span v-if="goodItem.price === '999999999.00' ">По запросу</span>
+												<span v-if="goodItem.price === '999999999.00' || goodItem.price === '999999999'">По запросу</span>
 												<span v-else>{{goodItem.price}} ₽</span>
 												</div>
 											<button class="main-btn">Связаться с консультантом</button>
@@ -57,7 +57,8 @@
 									 	<tr v-for="variant in goodItem.variations">
 									 		<td v-for="atr in variant.attributes">{{atr}}</td>
 											<td>
-												<span v-if="variant.regular_price === '999999999.00' ">По запросу</span>
+												<span v-if="variant.regular_price === '999999999.00' ||  variant.regular_price === '999999999'">По запросу</span>
+												
 												<span v-else>{{variant.regular_price}} ₽</span>
 											</td>
 											<td>

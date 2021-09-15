@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <p class="good-descr mb-0">Стоимость:</p>
-                                    <p class="cart-item-price" v-if="item.variation.regular_price === '999999999.00' ">По запросу</p>
+                                    <p class="cart-item-price" v-if="item.variation.regular_price === '999999999.00' || item.variation.regular_price === '999999999' ">По запросу</p>
                                     <p v-else class="cart-item-price">
                                         {{(parseInt(item.variation.regular_price) * item.quantity).toLocaleString()}} 
                                     ₽</p>
@@ -296,7 +296,7 @@ import { required, email, minLength } from "vuelidate/lib/validators";
             getCartTotal(){
                 let total = 0
                 this.cart.forEach(item => {
-                    if(item.variation.regular_price !== '999999999.00'){
+                    if(item.variation.regular_price !== '999999999.00' && item.variation.regular_price !== '999999999'){
                         total += item.quantity * parseInt(item.variation.regular_price)
                     }
                 })
@@ -329,7 +329,7 @@ import { required, email, minLength } from "vuelidate/lib/validators";
                 }
 
                 axios
-                .post('http://aquagaz.ru/wp-json/ag/v1/send/order', zakazObj)
+                .post('https://aquagaz.ru/wp-json/ag/v1/send/order', zakazObj)
                 .then(res =>{
                     console.log(res.data)
                 })
