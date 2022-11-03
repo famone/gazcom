@@ -329,7 +329,7 @@ import { required, email, minLength } from "vuelidate/lib/validators";
                 }
 
                 axios
-                .post('https://aquagaz.ru/wp-json/ag/v1/send/order', zakazObj)
+                .post('https://aquagazkom.ru/wp-json/ag/v1/send/order', zakazObj)
                 .then(res =>{
                     console.log(res.data)
                 })

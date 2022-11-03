@@ -50,7 +50,7 @@ const projects = {
 	actions: {
 		loadCategory({commit}){
 			axios
-			.get('https://aquagaz.ru/wp-json/ag/v1/get/category')
+			.get('https://aquagazkom.ru/wp-json/ag/v1/get/category')
 			.then(res =>{
 				console.log(res.data)
 				commit("LOAD_CATEGORY", res.data)
@@ -60,7 +60,7 @@ const projects = {
 			state.singleCat = []
 
 			axios
-			.get('https://aquagaz.ru/wp-json/ag/v1/get/products/' + sub)
+			.get('https://aquagazkom.ru/wp-json/ag/v1/get/products/' + sub)
 			.then(res =>{
 				commit("SET_SINGLE_CAT", res.data)
 			})
@@ -69,7 +69,7 @@ const projects = {
 			state.singleGood = {}
 
 			axios
-			.get(`https://aquagaz.ru/wp-json/ag/v1/get/product/${id}`)
+			.get(`https://aquagazkom.ru/wp-json/ag/v1/get/product/${id}`)
 			.then(res =>{
 				commit("SET_SINGLE_GOOD", res.data)
 			})
